@@ -20,6 +20,8 @@ var connector = new builder.ChatConnector({
 
 server.post('/api/messages', connector.listen());
 
+//hola 
+
 var tableName = 'botdata';
 var azureTableClient = new botbuilder_azure.AzureTableClient(tableName, process.env['AzureWebJobsStorage']);
 var tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azureTableClient);
