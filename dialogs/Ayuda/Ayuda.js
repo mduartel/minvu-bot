@@ -26,7 +26,7 @@ function Ayuda(builder) {
             case 'Ver opciones':
             {
                 builder.Prompts.choice(session, '¡Excelente!, Existen las siguientes opciones de consulta ✌:',
-                'RSH - Grupo Familiar|RSH - Tramo|Registro Civil|SPS - Estado de Pago|Aranda - Consulta de Requerimiento|Aranda - Consulta de Incidente', 
+                'RSH - Grupo Familiar|RSH - Tramo|Registro Civil|SPS - Estado de Pago|DS49 - Estado Postulación|Banco de Postulaciones - Estado Proyecto|Aranda - Consulta de Requerimiento|Aranda - Consulta de Incidente', 
                 { listStyle: builder.ListStyle.button });    
                 break;
             }
@@ -38,13 +38,13 @@ function Ayuda(builder) {
             case 'Sí':
             {
                 builder.Prompts.choice(session, '¡Excelente!, Existen las siguientes opciones de consulta ✌:',
-                'RSH - Grupo Familiar|RSH - Tramo|Registro Civil|SPS - Estado de Pago|Aranda - Consulta de Requerimiento|Aranda - Consulta de Incidente', 
+                'RSH - Grupo Familiar|RSH - Tramo|Registro Civil|SPS - Estado de Pago|DS49 - Estado Postulación|Banco de Postulaciones - Estado Proyecto|Aranda - Consulta de Requerimiento|Aranda - Consulta de Incidente', 
                 { listStyle: builder.ListStyle.button }); 
                 break;
             }
             case 'No':
             {
-                session.endDialog('No hay problema 😇, ¿Qué deseas consultar?');
+                session.endDialog('Ha sido un placer ayudarle. ¡Que tenga un buen día! 👋👾');
                 break;
             }
         }
@@ -71,18 +71,30 @@ function Ayuda(builder) {
             }
             case 'SPS - Estado de Pago':
             {
+                session.beginDialog('SPSEstadoPago');
                 break;
-            }     
+            }  
+            case 'DS49 - Estado Postulación':
+            {
+                session.beginDialog('DS49EstadoPostulacion');
+                break;
+            } 
+            case 'Banco de Postulaciones - Estado Proyecto':
+            {
+                session.beginDialog('DS49EstadoProyecto');
+                break;
+            }      
             case 'Aranda - Consulta de Requerimiento':
             {
+                session.beginDialog('ArandaRequerimiento');
                 break;
             }   
             case 'Aranda - Consulta de Incidente':
             {
+                session.beginDialog('ArandaIncidente');
                 break;
             }
         }
     }]
 }
 exports.Ayuda = Ayuda;
-
